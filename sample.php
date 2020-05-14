@@ -13,5 +13,9 @@
  * @package sample
  */
 
+require 'inc/metaboxes.php';
+
 define( 'SAMPLE_PLUGIN_URI', plugins_url( null, __FILE__ ) );
 define( 'SAMPLE_PLUGIN_PATH', plugin_dir_path( __FILE__ ) );
+
+add_action( 'init', array( 'Metaboxes', 'singleton' ) );
