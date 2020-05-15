@@ -15,9 +15,11 @@
 
 require 'inc/metaboxes.php';
 require 'inc/cmb2-metaboxes.php';
+require 'inc/post.php';
 
 define( 'SAMPLE_PLUGIN_URI', plugins_url( null, __FILE__ ) );
 define( 'SAMPLE_PLUGIN_PATH', plugin_dir_path( __FILE__ ) );
 
-add_action( 'init', array( 'Metaboxes', 'singleton' ) );
-add_action( 'init', array( 'CMB2_Metaboxes', 'singleton' ) );
+add_action( 'init', array( '\sample\Metaboxes', 'singleton' ) );
+add_action( 'init', array( '\sample\CMB2_Metaboxes', 'singleton' ) );
+add_action( 'init', array( '\sample\Post', 'singleton' ) );

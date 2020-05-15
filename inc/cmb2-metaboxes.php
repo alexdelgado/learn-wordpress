@@ -1,5 +1,7 @@
 <?php
 
+namespace Sample;
+
 class CMB2_Metaboxes {
 
 	/**

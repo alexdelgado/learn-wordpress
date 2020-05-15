@@ -1,5 +1,7 @@
 <?php
 
+namespace Sample;
+
 class Metaboxes {
 
 	/**
