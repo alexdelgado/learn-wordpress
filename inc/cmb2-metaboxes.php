@@ -27,7 +27,7 @@ class CMB2_Metaboxes {
 		$cmb = new_cmb2_box(
 			array(
 				'id'            => 'sample_metabox',
-				'title'         => __( 'CMB2 Metabox', 'cmb2' ),
+				'title'         => __( 'CMB2 Metabox', 'twentytwenty-child' ),
 				'object_types'  => array( 'post' ),
 				'context'       => 'normal',
 				'priority'      => 'high',
@@ -37,7 +37,7 @@ class CMB2_Metaboxes {
 
 		$cmb->add_field(
 			array(
-				'name'       => __( 'Article Title', 'cmb2' ),
+				'name'       => __( 'Article Title', 'twentytwenty-child' ),
 				'id'         => 'cmb2_article_title',
 				'type'       => 'text'
 			)
@@ -45,7 +45,7 @@ class CMB2_Metaboxes {
 
 		$cmb->add_field(
 			array(
-				'name'       => __( 'Article Description', 'cmb2' ),
+				'name'       => __( 'Article Description', 'twentytwenty-child' ),
 				'id'         => 'cmb2_article_description',
 				'type'       => 'text'
 			)

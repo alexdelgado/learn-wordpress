@@ -36,7 +36,14 @@ class Metaboxes {
 	 * @param WP_Post $post The object for the current post/page.
 	 */
 	public function register_meta_boxes( $post = null ) {
-		add_meta_box( 'sample_meta_box', 'WordPress Core Metabox', array( $this, 'generate_sample_meta_box' ), 'post', 'normal', 'default' );
+		add_meta_box(
+			'sample_meta_box',
+			__('WordPress Core Metabox', 'twentytwenty-child' ),
+			array( $this, 'generate_sample_meta_box' ),
+			'post',
+			'normal',
+			'default'
+		);
 	}
 
 	/**
