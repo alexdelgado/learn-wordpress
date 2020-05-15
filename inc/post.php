@@ -20,8 +20,7 @@ class Post {
 
 	public function filter_the_content( $content ) {
 		echo $content;
-
-		require( SAMPLE_PLUGIN_PATH .'views/posts/article.php' );
+		require( get_stylesheet_directory() .'/views/posts/article.php' );
 	}
 
 	/**
@@ -44,6 +43,8 @@ class Post {
 	 * Defines all the WordPress actions and filters used by this theme.
 	 */
 	protected function _add_filters() {
-		add_filter( 'the_content', array( $this, 'filter_the_content' ) );
+		if ( ! is_admin() ) {
+			add_filter( 'the_content', array( $this, 'filter_the_content' ) );
+		}
 	}
 }

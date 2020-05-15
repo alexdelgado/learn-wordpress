@@ -21,7 +21,7 @@ class CMB2_Metaboxes {
 	/**
 	 * Register Meta Boxes
 	 *
-	 * Defines all the meta boxes used by this plugin.
+	 * Defines all the meta boxes used by this theme.
 	 */
 	public function register_meta_boxes() {
 		$cmb = new_cmb2_box(

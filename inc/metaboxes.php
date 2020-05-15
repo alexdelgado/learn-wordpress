@@ -31,7 +31,7 @@ class Metaboxes {
 	/**
 	 * Register Meta Boxes
 	 *
-	 * Defines all the meta boxes used by this plugin.
+	 * Defines all the meta boxes used by this theme.
 	 *
 	 * @param WP_Post $post The object for the current post/page.
 	 */
@@ -55,7 +55,7 @@ class Metaboxes {
 
 		wp_nonce_field( 'sample_meta_box', 'sample_meta_box_nonce' );
 
-		require( SAMPLE_PLUGIN_PATH .'views/meta-boxes/sample.php' );
+		require( get_stylesheet_directory() .'/views/meta-boxes/sample.php' );
 	}
 
 	/**
