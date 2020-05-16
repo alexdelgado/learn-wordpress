@@ -19,6 +19,7 @@ class Metaboxes {
 	private $article_meta = array(
 		'article-title',
 		'article-description',
+		'cb'
 	);
 
 	/**
@@ -59,6 +60,7 @@ class Metaboxes {
 
 		$title = ( ! empty( $post_meta[ 'article-title' ] ) ? $post_meta[ 'article-title' ]->meta_value : '' );
 		$description = ( ! empty( $post_meta[ 'article-description' ] ) ? $post_meta[ 'article-description' ]->meta_value : '' );
+		$cb = ( ! empty( $post_meta[ 'cb' ] ) ? unserialize( $post_meta[ 'cb' ]->meta_value ) : '' );
 
 		wp_nonce_field( 'sample_meta_box', 'sample_meta_box_nonce' );
 
@@ -154,7 +156,7 @@ class Metaboxes {
 			$name = str_replace( '-', '_', $field );
 
 			if ( isset( $_POST[ $name ] ) ) {
-				$meta_value = sanitize_text_field( $_POST[ $name ] );
+				$meta_value = ( is_array( $_POST[ $name ] ) ? $_POST[ $name ] : sanitize_text_field( $_POST[ $name ] ) );
 				update_post_meta( $post_id, "{$field}", $meta_value );
 			}
 		}

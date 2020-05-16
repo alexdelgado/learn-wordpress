@@ -20,6 +20,9 @@ class Post {
 
 	public function filter_the_content( $content ) {
 		echo $content;
+
+		$cb = get_post_meta( get_the_ID(), 'cb', true );
+
 		require( get_stylesheet_directory() .'/views/posts/article.php' );
 	}
 
